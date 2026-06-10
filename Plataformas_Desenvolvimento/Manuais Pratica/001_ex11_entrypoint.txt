@@ -1,0 +1,19 @@
+#!/bin/sh -e
+
+case $1 in
+
+  jupyter)
+    exec  jupyter-notebook --config=/home/GUEST/jupyter-notebook-config.py    
+  ;;
+
+  zeppelin)
+    exec /usr/bin/tini-static /opt/zeppelin/bin/zeppelin.sh
+  ;;
+
+  *)
+    exec "$@"
+  ;;
+
+esac
+
+exit 0

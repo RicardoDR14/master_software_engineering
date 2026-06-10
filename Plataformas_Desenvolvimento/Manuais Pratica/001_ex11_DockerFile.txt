@@ -1,0 +1,54 @@
+FROM apache/zeppelin:0.9.0
+
+LABEL maintainer="ricardo-a-filipe"
+ARG USER=GUEST
+ENV FRONTEND=jupyter
+ENV TZ=Europe/Lisbon
+
+ENV UUID=1234
+ENV GUID=1234
+ENV GROUP=GUEST
+
+# Install packages as root
+USER root
+
+#set timezone (needed for tzdata package)
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y locales && \
+    localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 && \
+    apt-get install -y python3 && \
+    apt-get install -y python3-pip && \
+    apt-get install -y jupyter
+
+
+#modulos
+RUN pip3 install xgboost && \
+    pip3 install pandas && \
+   pip3 install sklearn  && \
+   pip3 install imblearn  && \
+   pip3 install seaborn && \
+   pip3 install numpy && \
+   pip3 install matplotlib
+
+#cleanup debris
+RUN apt-get clean autoclean && apt-get autoremove --yes
+
+
+#add the service user
+RUN groupadd -r -g $GUID $GROUP && useradd -r -u $UUID -g $GUID -m $USER
+
+
+ADD jupyter.xml /home/$USER/jupyter-notebook-config.py
+
+
+# Jupyter nootbook default listen port
+EXPOSE 8888
+
+#Entrypoint
+ADD entrypoint.sh /entrypoint.sh
+
+
+ENTRYPOINT ["/entrypoint.sh"]
