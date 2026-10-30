@@ -1,0 +1,170 @@
+Test Cases to BRNDTS Login Page
+
+=============================================================================
+Test case ID: TC001
+
+Title: Successful Login with Valid Credentials
+
+Pre-Conditions:
+* User must be registered with valid credentials
+
+Test Steps:
+1. Navigate to the login page
+2. Enter a valid email and password
+3. Click the "Log in" button
+
+Test inputs:
+* Email: admin
+* Password: admin
+
+Test data:
+* Registered user credentials
+
+Expected Result:
+* User should be redirected to the homepage
+* An login success message should be displayed
+* No error message should be displayed
+
+Actual Result:
+To be filled during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: User is logged in successfully and redirected, An login success message should be displayed
+Fail: Login fails or incorrect redirection occurs
+
+=============================================================================
+Test case ID: TC002
+
+Title: Login with Invalid Email
+
+Pre-Conditions:
+* User must have incorrect or unregistered credentials
+
+Test Steps:
+1. Navigate to the login page
+2. Enter an incorrect email
+3. Enter the password
+3. Click the "Log in" button
+
+Test inputs:
+* Email: wrong
+* Password: wrong
+
+Test data:
+* Invalid Email
+* Password
+
+Expected Result:
+* User should not be logged in
+* An error message should be displayed.
+
+Actual Result:
+To be filled during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: Error message displayed and login does not occur
+Fail: User is logged in or incorrect message is shown
+
+=============================================================================
+Test case ID: TC003
+
+Title: Login with valid email and invalid password
+
+Pre-Conditions:
+* User must have incorrect or unregistered credentials
+
+Test Steps:
+1. Navigate to the login page
+2. Enter an valid email
+3. Enter an invalid password
+3. Click the "Log in" button
+
+Test inputs:
+* Email: admin
+* Password: wrong
+
+Test data:
+* Valid email
+* Invalid password
+
+Expected Result:
+* User should not be logged in
+* An error message should be displayed.
+
+Actual Result:
+To be filled during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: Error message displayed and login does not occur
+Fail: User is logged in or incorrect message is shown
+
+=============================================================================
+Test case ID: TC004
+
+Title: Login with Empty Fields
+
+Pre-Conditions:
+
+Test Steps:
+1. Navigate to the login page
+2. Leave email and password fields empty
+3. Click the "Log in" button
+
+Test inputs:
+* Email: (empty)
+* Password: (empty)
+
+Test data:
+No credentials entered
+
+Expected Result:
+* User should not be logged in
+* An error message should be displayed
+
+Actual Result:
+To be filled during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: Error message displayed and login does not occur
+Fail: User is logged in or incorrect message is shown
+
+=============================================================================
+Test case ID: TC005
+
+Title: Successful logout
+
+Pre-Conditions:
+
+Test Steps:
+1. Click on "Profile" icon
+2. Click on the "Logout" button in the profile popup
+
+Test inputs:
+
+Test data:
+
+Expected Result:
+* User should be logged out
+* User should be directed to the login page
+
+Actual Result:
+To be filled during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: 
+Fail: User is logged in or incorrect message is shown

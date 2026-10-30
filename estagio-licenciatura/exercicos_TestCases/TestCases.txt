@@ -1,0 +1,283 @@
+EX:
+Here's a small exercise focused on test case elaboration:
+Scenario:Imagine you're testing an online login form for a web application. The form consists of two fields:
+Username
+Password
+There is also a login button that submits the form.
+The application should validate that the username and password meet the following conditions:
+Username: Must be an email address.
+Password: Must be at least 8 characters long and contain at least one number and one special character (e.g., !, @, #).
+Task: Create test cases based on this scenario.
+
+
+Test Case ID: TC001
+
+Title: Valid username and a valid password
+
+Pre-Conditions:
+* The user must be registed with a valid username and a valid password
+
+Test Steps:
+1. Enter a valid username in the username field
+2. enter a valid password in the password field
+3. Click the login button to submit
+
+Test inputs:
+Username and password
+
+Test data:
+* Valid email address (example@email.com)
+* Valid password (password123!)
+
+Expect Result:
+* The user should be successfully logged in
+* No error message should be displayed
+* Homepage must appeared
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: The user successfully logs in and is redirected to the homepage
+Fail: An error message is displayed or the login does not occur as expected
+
+=============================================================================
+Test case ID: TC002
+
+Title: Invalid username (not a email)
+
+Pre-Conditions:
+* The user must be registed with a valid username and a valid password
+
+Test Steps:
+1. Enter a non-email username in the username field
+2. enter a valid password in the password field
+3. Click the login button to submit
+
+Test inputs:
+Username and password
+
+Test data:
+* Invalid email (example)
+* Valid password (password123!)
+
+Expect Result:
+* An error message is displayed, indicating that the username must be na email address
+* The login should not happen
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: An error message is displayed ststai the username must be an email address.
+Fail: No error message is displayed or the user is logged in 
+
+=============================================================================
+Test case ID: TC003
+
+Title: Invalid username (empty username field)
+
+Pre-Conditions:
+* The user must be registed with a valid username and a valid password
+
+Test Steps:
+1. Leave username input empty
+2. Enter a valid password in the password field
+3. Click the login button to submit
+
+Test inputs:
+Username and password
+
+Test data:
+* Invalid email ( )
+* Valid password (password123!)
+
+Expect Result:
+* An error message is displayed, indicating that the username field cannot be empty
+* The login should not happen
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: An error message is displayed, indicating that the username field cannot be empty
+Fail: No error message is displayed or the user is logged in 
+
+=============================================================================
+Test case ID: TC004
+
+Title: Valid username and invalid password (less than 8 characters)
+
+Pre-Conditions:
+* The user must be registed with a valid username and a valid password
+
+Test Steps:
+1. Enter a valid username in the username field
+2. Enter a invalid password (less than 8 characters) in the password field
+3. Click the login button to submit
+
+Test inputs:
+Username and password
+
+Test data:
+* Valid email (example@email.com)
+* Invalid password (pass1!)
+
+Expect Result:
+* An error message is displayed, indicating that the password must be at least 8 characters long
+* The login should not happen
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: An error message is displayed, indicating that the password must be at least 8 characters long
+Fail: No error message is displayed or the user is logged in 
+
+=============================================================================
+Test case ID: TC005
+
+Title: Valid username and invalid password (without special character)
+
+Pre-Conditions:
+* The user must be registed with a valid username and a valid password
+
+Test Steps:
+1. Enter a valid username in the username field
+2. Enter a invalid password (without special character) in the password field
+3. Click the login button to submit
+
+Test inputs:
+Username and password
+
+Test data:
+* Valid email (example@email.com)
+* Invalid password (password123)
+
+Expect Result:
+* An error message is displayed, indicating that the password must contain at least one special character
+* The login should not happen
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: An error message is displayed, indicating that the password must contain at least one special character
+Fail: No error message is displayed or the user is logged in 
+
+=============================================================================
+Test case ID: TC006
+
+Title: Valid username and invalid password (without a number)
+
+Pre-Conditions:
+* The user must be registed with a valid username and a valid password
+
+Test Steps:
+1. Enter a valid username in the username field
+2. Enter a invalid password (without a number) in the password field
+3. Click the login button to submit
+
+Test inputs:
+Username and password
+
+Test data:
+* Valid email (example@email.com)
+* Invalid password (password!)
+
+Expect Result:
+* An error message is displayed, indicating that the password must contain at least one number
+* The login should not happen
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: An error message is displayed, indicating that the password must contain at least one number
+Fail: No error message is displayed or the user is logged in 
+
+=============================================================================
+Test case ID: TC007
+
+Title: Valid username and invalid password (empty password field)
+
+Pre-Conditions:
+* The user must be registed with a valid username and a valid password
+
+Test Steps:
+1. Enter a valid username in the username field
+2. Leave password field empty
+3. Click the login button to submit
+
+Test inputs:
+Username and password
+
+Test data:
+* Valid email (example@email.com)
+* Invalid password ( )
+
+Expect Result:
+* An error message is displayed, indicating that the password field cannot be empty
+* The login should not happen
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: An error message is displayed, indicating that the password field cannot be empty
+Fail: No error message is displayed or the user is logged in
+
+=============================================================================
+Test case ID: TC008
+
+Title: Valid username and invalid password (empty password field)
+
+Pre-Conditions:
+* The user must not be registed
+
+Test Steps:
+1. Enter a valid username in the username field
+2. Enter a valid password in the password field
+3. Click the login button to submit
+
+Test inputs:
+Username and password
+
+Test data:
+* Valid email (example1@email.com)
+* Invalid password (password123!)
+
+Expect Result:
+* An error message is displayed, indicating that the user isn't registed
+* The login should not happen
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: An error message is displayed, indicating that the user isn't registed
+Fail: No error message is displayed or the user is logged in

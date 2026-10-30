@@ -1,0 +1,63 @@
+Casos de teste:
+
+- DETAILS
+
+  . edit video information(edit para details, botões para editar e não apenas escrever - será clicar no botão e depois escrever e ao terminar será guardado) ------ done
+
+  . verificar informações de mov e avi ------ done
+
+  . adicionar tags(1 ou +, tem popup) e eliminar tags (tem confirmação de delete), verificar banner de empty tags ------ done
+
+  . Cancelar processo de adicionar e delete de tags ------ done
+
+  . verificar tags cores selecionados ------ feita durante o processo de gestão de tags
+
+  . verificar se details page tem general e share ------ feita durante o processo de gestão de permissões
+
+  . partilhar video (como viewer, admin, editor), tentar partilhar com user inválido
+
+  . retirar permissões(remover users da lista de shared, tem popup) - done
+
+  . verificar permissões dadas na lista (se aparecem e com permissões corretas) - feita durante processo de gestão de permissões
+
+  . Cancelar processo de adicionar e retirar share video permissions e verificar que ficou tudo igual - done
+
+  . verificar permissões empty banner - done 
+
+  . verificar permissões do lado que quem recebe a partilha - falta delete de videos e permissoes
+
+  . verificar navegação através das bibliotecas da página (BRNDTS Hub > Your Videos > Inter - Atalanta > Details) - done
+
+- FILTERS E SEARCH
+
+  . aparecer os diferentes filtros(tags, upload date, duration) - done
+
+  . abrir e fechar e guardar os filtros (só tags, só upload date, só duration e todos)
+
+  . reset dos filtros funciona - done
+
+  . adicionar tags (1 ou +) e verificar videos - done
+
+  . remover tags - done
+
+  . adicionar upload date (apenas from, from e to, apenas to) e verificar videos (por escrito e por date picker) - done ainda sem diversificação de escrito ou date picker
+
+  . remover upload date - done
+
+  . adicionar duration (apenas from, from e to, apenas to) e verificar videos (por escrito e por botões)- done ainda diversificação de escrito ou botões
+
+  . remover duration - done
+
+  . verificar no results banner - done
+
+  . search de um titulo (minúsculas e maiúsculas), pela descrição tbm - done
+
+  . fazer testes de filtragem no shared tbm
+
+- NAVIGATION SIDEBAR
+
+  . modificar as opções do teste já existente (shared option aparece)
+
+  . verificar que é redirecionado (verificar tbm que não vai ter add button)
+
+  . verificar shared empty banner - done

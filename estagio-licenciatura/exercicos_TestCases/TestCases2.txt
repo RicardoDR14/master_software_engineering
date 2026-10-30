@@ -1,0 +1,483 @@
+EX:
+Scenario: E-commerce Shopping Cart
+
+You are testing the shopping cart feature of an e-commerce website. The shopping cart has the following functionality:
+1. Users can add multiple items to the cart.
+2. Each item has a quantity and price.
+3. The cart automatically updates the total price whenever items are added, removed, or updated.
+4. Users can update the quantity of items or remove items from the cart.
+5. Users can apply discount codes that reduce the total price.
+6. There’s an option to proceed to checkout, where the cart is validated before being submitted.
+
+Discount Codes:
+- DISCOUNT10: 10% off the total price.
+- DISCOUNT20: 20% off the total price (cannot be used in combination with DISCOUNT10).
+- FREESHIP: Provides free shipping (removes the shipping cost).
+
+Shipping Costs:
+- Standard shipping costs $5.
+- If the user applies a discount code of DISCOUNT10 or DISCOUNT20, the shipping cost should still be applied (unless FREESHIP is also applied).
+
+Task:
+Create test cases that cover all of the following aspects:
+
+1. Basic Functionality:
+   * Adding items to the cart.
+   * Updating quantities of items in the cart.
+   * Removing items from the cart.
+2. Price Calculation:
+   * Verifying that the total price is updated when items are added, removed, or updated.
+   * Verifying that the correct price is calculated when discount codes are applied.
+   * Verifying that the shipping cost is applied correctly.
+3. Discount Code Application:
+   * Applying valid discount codes and ensuring the price updates correctly.
+   * Verifying that discount codes can’t be used together (e.g., DISCOUNT10 and DISCOUNT20).
+   * Verifying that invalid or expired discount codes result in an error message.
+4. Checkout Process:
+   * Ensuring that users cannot proceed to checkout if the cart is empty.
+   * Verifying that the cart validation works and shows the correct error messages when there’s an issue with the cart (e.g., no shipping address, invalid items).
+   * Verifying the proper redirection after successful checkout.
+
+
+=============================================================================
+Test case ID: TC001
+
+Title: Adding multiple items to the cart
+
+Pre-Conditions:
+* User must be registered and logged in
+
+Test Steps:
+1. Click the "Add to cart" button of some product
+2. Repeat the same step multiple time with another items
+3. Click the "See cart" button
+
+Test inputs:
+* Item selected 1: Product A - 30€
+* Item selected 2: Product B - 20€
+* Item selected 3: Product C - 10€
+
+Test data:
+* User credentials
+* Cart empty
+
+Expect Result:
+* All selected items should be added to the cart
+* The cart should have 3 items: Product A, B and C
+* The total price should be 30€ + 20€ + 10€ = 60€
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: Selected items added correctly to the card, total price calculated correctly
+Fail: Items not added or total price incorrect
+
+=============================================================================
+Test case ID: TC002
+
+Title: Updating quantities of items in the cart
+
+Pre-Conditions:
+* User must be registered and logged in and has at least one item in the cart
+
+Test Steps:
+1. Navigate to the cart page
+2. Click in the "Increase quantity" button 
+3. Increase quantity to 3 and observe the result
+
+Test inputs:
+* Item selected: Product A - 30€
+* Initial quantity - 1
+* New quantity - 3
+
+Test data:
+* Before update -  Product A (quantity: 1)
+* After update - Product A (quantity: 3)
+
+Expect Result:
+* Quantity of Product A should be updated to 3
+* The total price should be 30€ * 3 = 90€
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: Quantity of Product A correctly updated and total price correctly updated according to quantity
+Fail: Quantity of Product A update fail or total price incorrect
+
+=============================================================================
+Test case ID: TC003
+
+Title: Removing items from the cart
+
+Pre-Conditions:
+* User must be registered and logged in and has at least one item in the cart
+
+Test Steps:
+1. Navigate to the cart page
+2. Find an item in the cart
+3. Click in the "Remove" button in item 
+4. Verify that the item is removed from the cart
+
+Test inputs:
+* Item selected: Product A - 30€
+
+Test data:
+* Before update - Product A (quantity: 1)
+* After update - No items in the cart
+
+Expect Result:
+* The item should be removed from the cart
+* The total price should should be updated
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: Item is removed and total price update correctly
+Fail: Item removal fails or total price incorrect
+
+=============================================================================
+Test case ID: TC004
+
+Title: Applying valid discount code (DISCOUNT10)
+
+Pre-Conditions:
+* User must be registered and logged in and has at least one item in the cart
+* Total price should be greater than 0€
+
+Test Steps:
+1. Navigate to the cart page
+2. Find an discount code input field
+3. Enter a valid discount code (DISCOUNT10)
+4. Verify that the total price is updated
+
+Test inputs:
+* Items in the cart
+* Discount code 
+
+Test data:
+* Item selected: Product A (price: 30€, quantity: 1)
+* Valid Discount Code: DISCOUNT10
+
+Expect Result:
+* Quantity of the item should not change
+* The total price should be 30€ - 10% = 27€
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: Quantity of the item should not change and total price update correctly
+Fail: Quantity of the item change or total price incorrect
+
+=============================================================================
+Test case ID: TC005
+
+Title: Applying multiple discount codes (DISCOUNT10 and DISCOUNT20)
+
+Pre-Conditions:
+* User must be registered and logged in and has at least one item in the cart
+* Total price should be greater than 0€
+
+Test Steps:
+1. Navigate to the cart page
+2. Find an discount code input field
+3. Enter a valid discount code (DISCOUNT10)
+4. Enter a valid discount code (DISCOUNT20)
+5. Verify that the total price is updated or not
+
+Test inputs:
+* Items in the cart
+* Discount code 
+
+Test data:
+* Before: Product A (price: 30€, quantity: 1)
+* After: total price should not change
+
+Expect Result:
+* Quantity of the item should not change
+* Discounts should not be applied
+* The total price should not change
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: An error message is diplayed, indicating that the discount codes aren't applicable, Quantity of the item should not change and total price should not change
+Fail: Quantity of the item change or total price change
+
+=============================================================================
+Test case ID: TC006
+
+Title: Applying FREESHIP discount code
+
+Pre-Conditions:
+* User must be registered and logged in and has at least one item in the cart
+* Total price should be greater than 0€
+* Shipping cost should be greater than 0€
+
+Test Steps:
+1. Enter "FREESHIP" discount code
+2. Verify that the shipping cost is updated
+
+Test inputs:
+* Items in the cart
+* Discount code 
+
+Test data:
+* Item selected: Product A (price: 30€, quantity: 1)
+* FREESHIP discount code
+
+Expect Result:
+* Quantity of the item should not change
+* The free shipping should be applied
+* The total price should be updated and should not include shipping cost
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: Quantity of the item should not change and total price update correctly and free shipping applied correctly
+Fail: Quantity of the item change or total price include shipping cost or an error message is displayed
+
+=============================================================================
+Test case ID: TC007
+
+Title: Applying invalid or expired discount code
+
+Pre-Conditions:
+* User must be registered and logged in and has at least one item in the cart
+* Total price should be greater than 0€
+
+Test Steps:
+1. Enter invalid discount code
+2. Verify that the total price is update or not
+
+Test inputs:
+* Items in the cart
+* Discount code 
+
+Test data:
+* Item selected: Product A (price: 30€, quantity: 1)
+* Invalid discount code (INVALID)
+
+Expect Result:
+* Quantity of the item should not change
+* The total price should not be updated
+* An error message should be displayed, indicating that is an invalid or expired discount code 
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: An error message is displayed, indicating that is an invalid or expired discount code, quantity of the item should not change and total price should not change
+Fail: An error message isn't displayed, quantity of the item change or total price change
+
+=============================================================================
+Test case ID: TC008
+
+Title: Proceed the checkout with an empty cart
+
+Pre-Conditions:
+* User must be registered and logged in and the cart must be empty
+
+Test Steps:
+1. Try to proceed checkout with a empty by clicking in the "Checkout" button
+
+Test inputs:
+Empty cart
+
+Test data:
+Empty cart
+
+Expect Result:
+* The user should not be able to proceed to checkout
+* An error message should be displayed, indicating that is not possible proceed to checkout with an empty cart
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: The user should not be able to proceed to checkout, An error message should be displayed, indicating that is not possible proceed to checkout with an empty cart
+Fail: No error message displayed, the user is able to proceed the checkout with an empty cart
+
+=============================================================================
+Test case ID: TC009
+
+Title: Cart validation - missing shipping address during checkout
+
+Pre-Conditions:
+* User must be registered and logged in
+* Cart has at least one item
+* User not provide shipping address
+
+Test Steps:
+1. Add at least one item to the cart
+2. Proceed to checkout page without providing a shipping address
+3. Click on "Proceed to checkout"
+
+Test inputs:
+* Items in the cart
+* No shipping address
+
+Test data:
+* Item selected: Product A (price: 30€, quantity: 1)
+* Shipping address: not entered
+
+Expect Result:
+* An validation message should be displayed, indicating that the shipping address is required
+* The user should not be able to proceed to the payment step until the shipping address is entered
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: The system blocks checkout and shows an appropriate error message about the missing shipping address
+Fail: Checkout proceeds without a shipping address or the error message is missing/incomplete
+
+=============================================================================
+Test case ID: TC010
+
+Title: Cart validation - invalid item in cart (out of stock)
+
+Pre-Conditions:
+* User must be registered and logged in
+* Cart has at least one item
+* Select item must be out of stock
+
+Test Steps:
+1. Add at least one item out of stock to the cart
+2. Click on "Proceed to checkout"
+
+Test inputs:
+* Items in the cart
+
+Test data:
+* Item selected: Product A (price: 30€, quantity: 1) - out of stock
+
+Expect Result:
+* An validation message should be displayed, indicating that the select item is invalid, is out of stock
+* The user should not be able to proceed to the payment step until the item is removed or restocked
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: The system blocks checkout and shows an appropriate error message about the invalid item
+Fail: Checkout proceeds despite the invalid item or the error message is missing/incomplete
+
+=============================================================================
+Test case ID: TC011
+
+Title: Cart validation - invalid payment method
+
+Pre-Conditions:
+* User must be registered and logged in
+* Cart has at least one item
+* User selects an invalid or expired payment method
+
+Test Steps:
+1. Add an item to the cart
+2. Proceed to the checkout page
+3. Select an expired or invalid payment method
+4. Click "Proceed to Payment"
+
+Test inputs:
+* Items in the cart
+* Payment Method: Invalid or expired card
+
+Test data:
+* Item selected: Product A (price: 30€, quantity: 1) - out of stock
+* Payment Method: Invalid or expired card
+
+Expect Result:
+* An validation message should be displayed, indicating that the select payment method is invalid
+* The user should not be able to proceed to the payment step until a valid payment method is selected 
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: The system blocks payment and shows an appropriate error message about the invalid item
+Fail: The user is able to proceed despite using an invalid payment method.
+
+=============================================================================
+Test case ID: TC012
+
+Title: Successful checkout whit all requirements correctly
+
+Pre-Conditions:
+* User must be registered and logged in
+* Cart has at least one valid item
+* Shipping address and valid payment method entered by the User
+
+Test Steps:
+1. Add items to the cart
+2. Navigate to cart page 
+3. Verify that the select item and quantity are in the cart
+4. Click on "Proceed to Checkout"
+5. Enter the shipping address
+6. Select a valid payment method
+7. Check all the information
+8. Confirm completion of the order by clicking the "Checkout" button.
+
+Test inputs:
+* Items in the cart
+* Shipping address
+* Payment method
+
+Test data:
+* Item selected: Product A (price: 30€, quantity: 1)
+* Shipping address (Rua Pedro Nunes, 3030 - 199, Coimbra, Portugal)
+* Valid Payment card (Visa, 1234 5678 9123 4567, Expiry 12/25, CVV 123)
+
+Expect Result:
+* The system should validate all shipping and payment information
+* The payment should be processed successfully
+* The order should be confirmed, and an order confirmation message should be displayed
+* The user should be redirected to a thank-you page with the order number and payment status
+
+Actual result:
+* To be field during test execution
+
+Test Case Author:
+Ricardo Rodrigues
+
+Status Criteria:
+Pass: The checkout is completed successfully, payment is processed, and the order is confirmed. The user is redirected to the thank-you page
+Fail: The checkout is not completed, payment fails, or the order is not confirmed.

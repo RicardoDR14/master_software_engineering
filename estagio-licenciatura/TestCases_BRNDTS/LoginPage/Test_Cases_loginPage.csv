@@ -1,0 +1,15 @@
+Name;Precondition;Objective;Folder;Priority;Component;Coverage (Issues);Steps;Test Data;Expected Result
+TC001 - Successful Login with Valid Credentials;User must be registered with valid credentials;Optional (we usually only use if there is no User Story Linked);Can be create later, but if you already have an idea on the folder structure, you can fill like: /Parent/Child;Optional;Optional;The Story ID If you want to link the test case to it;Step #1 - Navigate to the login page;;Show Login Page
+;;;;;;;Step #2 - Enter a valid email and password;"Email: admin; Password: admin";
+;;;;;;;"Step #3 - Click the ""Log in"" button";;"User should be redirected to the homepage; An login success message should be displayed"
+TC002 - Login with invalid email;User must have incorrect or unregistered credentials;Optional (we usually only use if there is no User Story Linked);Can be create later, but if you already have an idea on the folder structure, you can fill like: /Parent/Child;Optional;Optional;The Story ID If you want to link the test case to it;Step #1 - Navigate to the login page;;Show Login Page
+;;;;;;;Step #2 - Enter a invalid email;Email: wrong;
+;;;;;;;Step #3 - Enter the password;Password: admin;
+;;;;;;;"Step #4 - Click the ""Log in"" button";;Error message displayed and login does not occur
+TC003 - Login with valid email and invalid password;User must be registered with valid credentials;;;;;;Step #1 - Navigate to the login page;;Show Login Page
+;;;;;;;Step #2 - Enter a valid email;Email: admin;
+;;;;;;;Step #3 - Enter a invalid password;Password: wrong;
+;;;;;;;"Step #4 - Click the ""Log in"" button";;Error message displayed and login does not occur
+TC004 - Login with Empty Fields;;;;;;;Step #1 - Navigate to the login page;;Show Login Page
+;;;;;;;Step #2 - Leave email and password fields empty;"Email: (empty); Password: (empty)";
+;;;;;;;"Step #3 - Click the ""Log in"" button";;Error message displayed and login does not occur
