@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">aula03</string>
+    <string name="textoA">Hello World A!</string>
+    <string name="textoB">Hello World B!</string>
+    <string name="textoC">Hello World C!</string>
+    <string name="amov" translatable="false">Arquiteturas Móveis</string>
+</resources>

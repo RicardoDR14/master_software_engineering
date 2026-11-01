@@ -1,0 +1,23 @@
+* C:\Users\riroc\OneDrive\Ambiente de Trabalho\ISEC\1ºANO\1ºSEMESTRE\Eletrónica\Softwares e Simuladores\Schematic1.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Nov 10 16:10:48 2022
+
+
+
+** Analysis setup **
+.OP 
+.LIB "C:\Users\riroc\OneDrive\Ambiente de Trabalho\ISEC\1ºANO\1ºSEMESTRE\Eletrónica\Softwares e Simuladores\Schematic1.lib"
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Schematic1.net"
+.INC "Schematic1.als"
+
+
+.probe
+
+
+.END

@@ -1,0 +1,9 @@
+﻿@using RCLUtilidades;
+
+<Router AppAssembly="typeof(Program).Assembly"
+    AddicitionalAssembleys="new[] {typeof(Component1).Assembley}">
+    <Found Context="routeData">
+        <RouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)" />
+        <FocusOnNavigate RouteData="routeData" Selector="h1" />
+    </Found>
+</Router>

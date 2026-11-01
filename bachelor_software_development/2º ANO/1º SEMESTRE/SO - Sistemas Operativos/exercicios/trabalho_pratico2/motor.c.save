@@ -1,0 +1,49 @@
+//O PROGRAMA MOTOR GERE O JOGO, FUNCIONANDO COMO UM SERVIDOR E INTERAGIDO COM VARIOS JOGADORES
+//LÓDIGA DO JOGO - (gestão de regras, labirinto e controlo de jogo)
+//A VALIDACAO DO NOME COLOCADA PELO UTILIZADORS SERA FEITA AQUI
+//CARREGA OS MAPAS DO LABIRINTOS DE ACORDO COM OS NIVEIS,
+//INICIA E TERMINA OS JOGOS
+//INSERE OBSTACULOS(FIXOS E MOVEIS) NO MAPA E DURANTE O JOGO
+//PODE ENVIAR INFORMACOES AO UTILIZADORES SEM QUE ESTES TENHAM SOLICITADO
+/*INTERAGE DIRETAMENTE COM UM UTILIZADOR(ADMINSITRADOR DA PLATAFORMA),
+ AO QUAL ESPECIFICA COMANDOS(RECEBIDOS PELO MOTOR NO SEU STDIN) QUE PERMITEM,
+ POR EXEMPLO, TERMINAR O JOGO, MOSTRAR JOGADORES ATIVOS E EXPULSAR UM JOGADOR*/
+//EXISTE NUM MAXIMO O PROCESSO MOTOR
+//O PROGRAMA MOTOR TAMBEM DEVERA INTERAGIR COM OS DIVERSOS PROGRAMAS BOT
+/*RECEBE INFORMACAO DO PROGRAMA BOT, CONTENDO AS COORDENADAS E DURACAO DOS OBSTACULOS TEMPORARIOS FIXOS("PEDRAS")
+ A SEREM INTRODUZIDOS DURANTE O JOGO (LIN COL DURACAO) -> (3 5 10) -> SERA INTRODUZIDO UM OBSTACULO PEDRA NAS
+COORDENADAS COLUNA 3 E LINHA 5, DURANTE 10 SEGUNDOS*/
+#include "util.h"
+#include "motor.h"
+
+//char *playerName = NULL;
+
+/*void recebeSinal(int signo){
+	printf("Recebi o sinal SIGUSR1. Nome do jogador: %s\n", playerName); //funcao que recebe o nome do jogador
+}*/
+
+void recebeCoordenadas(int signo, siginfo_t *info, void *context){//receber as coordenas da pedra
+
+	struct BotData *botData = (struct BotData *)info -> si_value.sival_ptr;
+
+	printf("RECEBI... %d %d %d\n", botData -> x, botData -> y, botData -> duracao);
+}
+
+
+
+int main(int argc, char *argv[]){
+
+	if (argc != 1){ //executar o motor
+		fprintf(stderr, "[ERRO] Nr.Args... <%s>\n", argv[0]);
+	}
+
+
+	struct sigaction sa;
+	sa.sa_flags = SA_SIGINFO;
+	sa.sa_sigaction = recebeCoordenadas;
+	sigaction(SIGUSR1, &sa, NULL);
+
+	//VALIDAR COMANDOS
+	//RECEBER O SINAL DO BOT -> EXEMPLIO: RECEBI: 3 5 10
+	//LEITURA DO FICHEIRO COM MAPA -> SO DEVE LER E MOSTRAR NO ECRA
+}

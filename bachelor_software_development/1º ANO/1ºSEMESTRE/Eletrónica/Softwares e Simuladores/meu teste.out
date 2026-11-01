@@ -1,0 +1,64 @@
+
+**** 11/10/22 15:18:47 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\riroc\OneDrive\Ambiente de Trabalho\ISEC\1ANO\1SEMESTRE\Eletrnica\Softwares e Simuladores\meu teste.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Nov 10 15:18:43 2022
+
+
+
+** Analysis setup **
+.tran 0ns 2ms 0 0.02ms
+.LIB "C:\Users\riroc\OneDrive\Ambiente de Trabalho\ISEC\1ANO\1SEMESTRE\Eletrnica\Softwares e Simuladores\meu teste.lib"
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+-----------------------------------------------------------------------------------------------------------------------$
+ERROR -- Can't find library
+.lib "nom.lib"
+
+.INC "meu teste.net"
+
+**** INCLUDING "meu teste.net" ****
+* Schematics Netlist *
+
+
+
+D_D1         $N_0001 $N_0002 D1N4002-X 
+V_V1         $N_0002 0 DC 0 AC 0
++SIN 0 20 50 0 0 0
+R_R1         0 $N_0003  2K  
+R_R2         $N_0003 $N_0001  0.5K  
+
+**** RESUMING "meu teste.cir" ****
+.INC "meu teste.als"
+
+
+
+**** INCLUDING "meu teste.als" ****
+* Schematics Aliases *
+
+.ALIASES
+D_D1            D1(1=$N_0001 2=$N_0002 )
+V_V1            V1(+=$N_0002 -=0 )
+R_R1            R1(1=0 2=$N_0003 )
+R_R2            R2(1=$N_0003 2=$N_0001 )
+.ENDALIASES
+
+
+**** RESUMING "meu teste.cir" ****
+.probe
+
+
+.END
+

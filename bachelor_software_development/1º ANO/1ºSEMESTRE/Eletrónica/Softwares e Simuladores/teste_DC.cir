@@ -1,0 +1,22 @@
+* C:\Users\riroc\OneDrive\Ambiente de Trabalho\ISEC\1ºANO\1ºSEMESTRE\Eletrónica\Softwares e Simuladores\teste_DC.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Nov 10 07:50:02 2022
+
+
+
+** Analysis setup **
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "teste_DC.net"
+.INC "teste_DC.als"
+
+
+.probe
+
+
+.END

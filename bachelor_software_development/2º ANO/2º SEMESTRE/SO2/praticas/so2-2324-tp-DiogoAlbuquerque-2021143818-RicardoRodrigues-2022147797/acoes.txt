@@ -1,0 +1,3 @@
+Tesla 100 50000
+Google 50 2000
+Spotify 2 100000

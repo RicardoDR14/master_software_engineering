@@ -1,0 +1,119 @@
+
+**** 11/10/22 07:50:56 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\riroc\OneDrive\Ambiente de Trabalho\ISEC\1ANO\1SEMESTRE\Eletrnica\Softwares e Simuladores\teste_AC.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Nov 10 07:50:52 2022
+
+
+
+** Analysis setup **
+.tran 0ns 100ms 0 10us
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "teste_AC.net"
+
+**** INCLUDING teste_AC.net ****
+* Schematics Netlist *
+
+
+
+R_R2         0 $N_0001  1k  
+D_D1         $N_0002 $N_0001 D1N4002 
+V_V2         $N_0002 0 DC 0 AC 0
++SIN 0 12 50 0 0 0
+
+**** RESUMING teste_AC.cir ****
+.INC "teste_AC.als"
+
+
+
+**** INCLUDING teste_AC.als ****
+* Schematics Aliases *
+
+.ALIASES
+R_R2            R2(1=0 2=$N_0001 )
+D_D1            D1(1=$N_0002 2=$N_0001 )
+V_V2            V2(+=$N_0002 -=0 )
+.ENDALIASES
+
+
+**** RESUMING teste_AC.cir ****
+.probe
+
+
+.END
+
+**** 11/10/22 07:50:56 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\riroc\OneDrive\Ambiente de Trabalho\ISEC\1ANO\1SEMESTRE\Eletrnica\Softwares e Simuladores\teste_AC.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4002         
+          IS   14.110000E-09 
+           N    1.984        
+         ISR  100.000000E-12 
+         IKF   94.81         
+          BV  100.1          
+         IBV   10            
+          RS     .03389      
+          TT    4.761000E-06 
+         CJO   51.170000E-12 
+          VJ     .3905       
+           M     .2762       
+
+
+**** 11/10/22 07:50:56 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\riroc\OneDrive\Ambiente de Trabalho\ISEC\1ANO\1SEMESTRE\Eletrnica\Softwares e Simuladores\teste_AC.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)-30.71E-21                   ($N_0002)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2         3.071E-23
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .19
+

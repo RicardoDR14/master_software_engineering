@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "JOGOUI.C": "cpp",
+        "unistd.h": "c"
+    }
+}

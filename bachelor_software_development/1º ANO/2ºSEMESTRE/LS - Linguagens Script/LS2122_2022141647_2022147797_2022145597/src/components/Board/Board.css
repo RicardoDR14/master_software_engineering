@@ -1,0 +1,21 @@
+.board {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    justify-content: center;
+    margin: auto;
+    border-radius: 0.5rem;
+}
+.board-row{
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.board.X{
+    background: red;
+}
+.board.O{
+    background: blue;
+}

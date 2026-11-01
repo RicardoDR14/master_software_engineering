@@ -1,0 +1,8 @@
+LTspice:
+https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html
+
+Python:
+https://www.python.org/downloads/
+
+Inscrição (criar conta) simulador on-line -> tinkercad:
+https://www.tinkercad.com/auth/shadowbox_fullscreen

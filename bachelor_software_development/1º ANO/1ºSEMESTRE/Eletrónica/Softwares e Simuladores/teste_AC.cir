@@ -1,0 +1,22 @@
+* C:\Users\riroc\OneDrive\Ambiente de Trabalho\ISEC\1ºANO\1ºSEMESTRE\Eletrónica\Softwares e Simuladores\teste_AC.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Nov 10 07:50:52 2022
+
+
+
+** Analysis setup **
+.tran 0ns 100ms 0 10us
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "teste_AC.net"
+.INC "teste_AC.als"
+
+
+.probe
+
+
+.END

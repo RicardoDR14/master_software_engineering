@@ -1,0 +1,51 @@
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 25rem;
+    font-size: 1.5rem;
+    background-color: white;
+    margin: 1rem auto;
+    box-shadow: 0px 0px 8px #888888;
+    border-radius: 0.5rem;
+    font-weight: bold;
+}
+.input{
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 8px #888888;
+    text-align: center;
+    width: 10rem;
+    margin: 1rem;
+}
+
+.score {
+    display: flex;
+    width: 90%;
+    text-align: center;
+    justify-content: center;
+}
+
+.x-score {
+    text-align: center;
+    width: 50%;
+    color: red;
+    border-bottom: 5px solid red;
+}
+
+.o-score {
+    text-align: center;
+    width: 50%;
+    color:blue;
+    border-bottom: 5px solid blue;
+}
+
+.inactive {
+    border-bottom: 5px solid transparent;
+}
+
+.winner p{
+    margin: 5px;
+    text-align: center;
+}

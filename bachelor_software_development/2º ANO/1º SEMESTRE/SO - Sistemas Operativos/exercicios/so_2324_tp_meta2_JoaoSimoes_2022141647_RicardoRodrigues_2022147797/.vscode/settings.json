@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "JOGOUI.C": "cpp",
+        "types.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}

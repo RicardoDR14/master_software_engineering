@@ -1,0 +1,29 @@
+Dados de Entrada:
+	Peso(inteiro): Peso do indivíduo
+	Altura(real): Altura do Indivíduo
+
+Resultados pretendidos:
+	IMC(real): índice de massa corporal;
+
+Conhecimento requerido:
+	IMC = Peso / Altura^2
+
+Estratégia:
+	Obtemos o peso e a altura
+	Através da expressão, calculamos o IMC
+	Mostramos o IMC
+
+Pseudocódigo:
+	Início IMC
+	
+	Mostrar("digite o peso: ")
+	Receber(Peso(int))
+	Mostrar("digite a altura: ")
+	Receber(Altura(real))
+	
+	IMC <-- Peso / Altura^2
+	
+	Mostrar(IMC)
+	
+	Fim IMC
+	

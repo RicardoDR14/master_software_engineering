@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">aula03</string>
+    <string name="textoA">Hola mundo A!</string>
+    <string name="textoB">Hola mundo B!</string>
+    <string name="textoC">Hola mundo C!</string>
+</resources>

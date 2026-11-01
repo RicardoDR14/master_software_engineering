@@ -1,0 +1,23 @@
+* C:\Users\riroc\OneDrive\Ambiente de Trabalho\ISEC\1ºANO\1ºSEMESTRE\Eletrónica\Softwares e Simuladores\meu teste.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Nov 10 15:18:43 2022
+
+
+
+** Analysis setup **
+.tran 0ns 2ms 0 0.02ms
+.LIB "C:\Users\riroc\OneDrive\Ambiente de Trabalho\ISEC\1ºANO\1ºSEMESTRE\Eletrónica\Softwares e Simuladores\meu teste.lib"
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "meu teste.net"
+.INC "meu teste.als"
+
+
+.probe
+
+
+.END
